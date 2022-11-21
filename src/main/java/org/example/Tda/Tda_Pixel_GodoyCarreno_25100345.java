@@ -44,10 +44,15 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
                 '}';
     }
 
-    public void flipH(){
-        System.out.println("flipH");
+    public void flipH(int ancho){
+        y =  (y - (ancho- 1)) * (-1);
+    }
+    public void flipV(int largo){
+        x =  (x - (largo- 1)) * (-1);
     }
 
     abstract void flipV();
+
+    abstract  void flipH();
 
 }
