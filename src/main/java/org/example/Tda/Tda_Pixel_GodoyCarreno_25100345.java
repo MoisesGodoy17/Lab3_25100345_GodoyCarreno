@@ -35,6 +35,8 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
         return depth;
     }
 
+    abstract void rotate90();
+
     @Override
     public String toString() {
         return "Tda_Pixel_GodoyCarreno_25100345{" +
@@ -49,6 +51,11 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
     }
     public void flipV(int largo){
         x =  (x - (largo- 1)) * (-1);
+    }
+
+    public  void rotate90(int ancho, int largo, int acum, int temp){
+        x = acum;
+        y = temp;
     }
 
     abstract void flipV();

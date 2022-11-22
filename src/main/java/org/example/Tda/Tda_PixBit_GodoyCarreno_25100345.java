@@ -17,6 +17,11 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
     void flipH() {
     }
 
+    @Override
+    void rotate90(){
+
+    }
+
     public int getBit() {
         return bit;
     }
