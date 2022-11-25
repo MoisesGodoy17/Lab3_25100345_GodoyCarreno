@@ -1,11 +1,24 @@
 package org.example.Tda;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_25100345{
 
-    private int bit;
+    int bit;
+    List<Integer> listaBits = new ArrayList<>();
 
     public Tda_PixBit_GodoyCarreno_25100345(int x, int y, int depth, int bit) {
         super(x, y, depth);
+        this.bit = bit;
+    }
+
+    public int getBit() {
+        return bit;
+    }
+
+    public void setBit(int bit) {
         this.bit = bit;
     }
 
@@ -18,16 +31,17 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
     }
 
     @Override
-    void rotate90(){
-
+    void getBits() {
+        listaBits.add(bit);
+        for (Integer bit : listaBits){
+            System.out.println(bit);
+        }
     }
 
-    public int getBit() {
-        return bit;
-    }
-
-    public void setBit(int bit) {
-        this.bit = bit;
+    @Override
+    public String getColors(){
+        String color = "" + bit;
+        return color;
     }
 
     @Override
@@ -36,4 +50,5 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
                  " x=" + getX()+ ", y=" +getY() + ", bit=" + bit + ", depth=" +getDepth()+
                 '}';
     }
+
 }

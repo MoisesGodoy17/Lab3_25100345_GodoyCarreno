@@ -1,5 +1,7 @@
 package org.example.Tda;
 
+import java.util.List;
+
 public abstract class Tda_Pixel_GodoyCarreno_25100345 {
     private int x;
     private int y;
@@ -35,7 +37,9 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
         return depth;
     }
 
-    abstract void rotate90();
+    abstract void getBits();
+
+    abstract String getColors();
 
     @Override
     public String toString() {
@@ -53,7 +57,7 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
         x =  (x - (largo- 1)) * (-1);
     }
 
-    public  void rotate90(int ancho, int largo, int acum, int temp){
+    public  void rotate90(int acum, int temp){
         x = acum;
         y = temp;
     }
@@ -61,5 +65,8 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
     abstract void flipV();
 
     abstract  void flipH();
+
+    //List<Tda_Pixel_GodoyCarreno_25100345> pixeles
+
 
 }

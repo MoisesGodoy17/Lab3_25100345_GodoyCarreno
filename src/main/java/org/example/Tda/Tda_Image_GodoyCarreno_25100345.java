@@ -1,4 +1,5 @@
 package org.example.Tda;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -64,9 +65,30 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
                 acum = 0;
                 temp = temp - 1;
             }
-            pixel.rotate90(ancho, largo, acum, temp);
+            pixel.rotate90(acum, temp);
             acum ++;
         }
+    }
+
+    @Override
+    public List<Tda_Par_GodoyCarreno_25100345> histogram() {
+        List<String> bits = new ArrayList<>();
+        List<String> btiUnico = new ArrayList<>();
+        List<Tda_Par_GodoyCarreno_25100345> listHistogram = new ArrayList<>();
+        for (Tda_Pixel_GodoyCarreno_25100345 pixel : pixeles){
+            bits.add(pixel.getColors());
+            if (!btiUnico.contains(pixel.getColors())){
+                btiUnico.add(pixel.getColors());
+            }
+        }
+        for (String color : btiUnico){
+            long acc = bits.stream().filter(aux-> aux.equals(color)).count();
+            Tda_Par_GodoyCarreno_25100345 histograma = new Tda_Par_GodoyCarreno_25100345(color, acc);
+            listHistogram.add(histograma);
+        }
+        System.out.println(bits);
+
+        return  listHistogram;
     }
 
     @Override
