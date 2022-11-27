@@ -40,6 +40,53 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
     }
 
     @Override
+    public int isBitmap() {
+        for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
+            if (bit.tipoPixel() == 0){
+                System.out.println("Tipo de imagen no coincide");
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    @Override
+    public int isPixmap() {
+        for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
+            if (bit.tipoPixel() == 0){
+                System.out.println("Tipo de imagen no coincide");
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    @Override
+    public int isHexmap() {
+        for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
+            if (bit.tipoPixel() == 0){
+                System.out.println("//---Tipo de imagen no coincide---//");
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    @Override
+    public int isCompressed() {
+        int acc = 0;
+        for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
+            acc = ++acc;
+        }
+        if (getLargo()*getAncho() < acc){
+            System.out.println("//---La imagen esta comprimida---//");
+            return 1;
+        }
+        System.out.println("//---La imagen no ha sido comprimida---//");
+        return 0;
+    }
+
+    @Override
     public void flipH(int ancho) {
         pixeles.forEach(Tda_PixBit_GodoyCarreno_25100345->Tda_PixBit_GodoyCarreno_25100345.flipH(getAncho()));
     }
@@ -56,19 +103,19 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
                         pixel.getY() <= y2)
                         .collect(Collectors.toList());
         this.pixeles = filterP;
-        //X1 =< X , X =< X2 , Y1 =< Y , Y =< Y2
+        // X1 =< X , X =< X2 , Y1 =< Y , Y =< Y2
     }
+
     @Override
-    public void rotate90(int ancho, int largo, int acum, int temp){
-        for (Tda_Pixel_GodoyCarreno_25100345 pixel : pixeles){
-            if (acum == ancho) {
-                acum = 0;
-                temp = temp - 1;
-            }
-            pixel.rotate90(acum, temp);
-            acum ++;
+    public void imageToHex() {
+        List<Tda_Pixel_GodoyCarreno_25100345> rgbHex = new ArrayList<>();
+        for (Tda_Pixel_GodoyCarreno_25100345 rgb : pixeles){
+            Tda_PixHex_GodoyCarreno_25100345 pixHex = new Tda_PixHex_GodoyCarreno_25100345(rgb.getX(), rgb.getY(), rgb.getDepth(), rgb.rgbTohex());
+            rgbHex.add(pixHex);
         }
+        setPixeles(rgbHex);
     }
+
 
     @Override
     public List<Tda_Par_GodoyCarreno_25100345> histogram() {
@@ -86,9 +133,54 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
             Tda_Par_GodoyCarreno_25100345 histograma = new Tda_Par_GodoyCarreno_25100345(color, acc);
             listHistogram.add(histograma);
         }
-        System.out.println(bits);
-
         return  listHistogram;
+    }
+
+    @Override
+    public void rotate90(int ancho, int largo, int acum, int temp){
+        for (Tda_Pixel_GodoyCarreno_25100345 pixel : pixeles){
+            if (acum == ancho) {
+                acum = 0;
+                temp = temp - 1;
+            }
+            pixel.rotate90(acum, temp);
+            acum ++;
+        }
+    }
+
+    @Override
+    public void changePixel(Tda_Pixel_GodoyCarreno_25100345 NewPixel) {
+        List<Tda_Pixel_GodoyCarreno_25100345> pixelessAux = new ArrayList<>();
+        for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
+            if (bit.getX() == NewPixel.getX() && bit.getY() == NewPixel.getX()){
+                pixelessAux.add(NewPixel);
+            }
+            pixelessAux.add(bit);
+        }
+        setPixeles(pixelessAux);
+    }
+
+    @Override
+    public void invertColorBit() {
+        for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
+            bit.invertColorBit();
+        }
+    }
+
+    @Override
+    public void invertColorRgb() {
+        for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
+            bit.invertRgb();
+        }
+    }
+
+    @Override
+    public void muestraPixeles() {
+        List<String> bitsSout = new ArrayList<>();
+        for (Tda_Pixel_GodoyCarreno_25100345 pixel : pixeles){
+            bitsSout.add(pixel.getColors());
+        }
+        System.out.println(bitsSout);
     }
 
     @Override

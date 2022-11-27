@@ -41,14 +41,9 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
 
     abstract String getColors();
 
-    @Override
-    public String toString() {
-        return "Tda_Pixel_GodoyCarreno_25100345{" +
-                "x=" + x +
-                ", y=" + y +
-                ", depth=" + depth +
-                '}';
-    }
+    abstract String rgbTohex();
+
+    abstract int tipoPixel();
 
     public void flipH(int ancho){
         y =  (y - (ancho- 1)) * (-1);
@@ -62,9 +57,20 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
         y = temp;
     }
 
-    abstract void flipV();
+    abstract void  invertColorBit();
 
-    abstract  void flipH();
+    abstract void invertRgb();
+
+    //abstract void changePixel(Tda_Pixel_GodoyCarreno_25100345 NewPixel);
+
+    @Override
+    public String toString() {
+        return "Tda_Pixel_GodoyCarreno_25100345{" +
+                "x=" + x +
+                ", y=" + y +
+                ", depth=" + depth +
+                '}';
+    }
 
     //List<Tda_Pixel_GodoyCarreno_25100345> pixeles
 

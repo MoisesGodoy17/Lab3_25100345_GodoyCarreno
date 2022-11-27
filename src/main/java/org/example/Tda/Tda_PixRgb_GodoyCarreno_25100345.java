@@ -42,14 +42,7 @@ public class Tda_PixRgb_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
         this.b = b;
     }
 
-    @Override
-    public String toString() {
-        return "Tda_PixRgb_GodoyCarreno_25100345{" +
-                "r=" + r +
-                ", g=" + g +
-                ", b=" + b +
-                '}';
-    }
+
 
     @Override
     void getBits() {
@@ -61,17 +54,48 @@ public class Tda_PixRgb_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
 
     @Override
     public String getColors(){
-        String color = "" + r + "" + g + "" + b;
+        String color = "" + r + " " + g + " " + b;
         return color;
     }
 
     @Override
-    void flipV() {
+    int tipoPixel() {
+        if ((getR() >= 0 || 255 >= getR()) && (getG() >= 0 || 255 >= getG()) && (getB() >= 0 || 255 >= getB())) {
+            return 1;
+        }
+        return 0;
+    }
+
+    String rgbTohex(){
+        //System.out.println("Hex string is " + Integer.toHexString(l));
+        String hexR = Integer.toHexString(getR());
+        String hexG = Integer.toHexString(getG());
+        String hexB = Integer.toHexString(getG());
+        String numHex = "#" + hexR + "" + hexG + "" + hexB;
+        return numHex;
+    }
+
+    @Override
+    void invertColorBit() {
 
     }
 
     @Override
-    void flipH() {
-
+    void invertRgb() {
+        r = 255 - r;
+        g = 255 - g;
+        b = 255 - b;
     }
+
+    @Override
+    public String toString() {
+        return "Tda_PixRgb_GodoyCarreno_25100345{" +
+                " x=" + getX()+
+                ", y=" + getY()+
+                ", r=" + r +
+                ", g=" + g +
+                ", b=" + b +
+                '}';
+    }
+
 }

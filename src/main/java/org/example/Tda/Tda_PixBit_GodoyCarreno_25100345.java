@@ -22,13 +22,6 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
         this.bit = bit;
     }
 
-    @Override
-    void flipV() {
-    }
-
-    @Override
-    void flipH() {
-    }
 
     @Override
     void getBits() {
@@ -40,8 +33,36 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
 
     @Override
     public String getColors(){
-        String color = "" + bit;
+        String color = " " + bit;
         return color;
+    }
+
+    @Override
+    int tipoPixel() {
+        if (getBit() == 1 || getBit() == 0) {
+            return 1;
+        }
+        return 0;
+    }
+
+    @Override
+    String rgbTohex() {
+        return null;
+    }
+
+    @Override
+    void invertColorBit() {
+        if (bit == 0){
+            bit = 1;
+        }
+        else {
+            bit = 0;
+        }
+    }
+
+    @Override
+    void invertRgb() {
+
     }
 
     @Override
