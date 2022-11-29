@@ -175,6 +175,29 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
     }
 
     @Override
+    public String imagenString() {
+        int accA = 1;
+        String newImage = "";
+        String auxImagen = "";
+        String temp = "";
+        for (Tda_Pixel_GodoyCarreno_25100345 bits : pixeles){
+            if (accA == getAncho()){
+                auxImagen = bits.getColors();
+                newImage = "\t" + auxImagen +  "\n";
+                temp = temp + newImage;
+                accA = 1;
+            }
+            else {
+                auxImagen = bits.getColors();
+                newImage = auxImagen + "\t";
+                temp = temp + newImage;
+                accA ++;
+            }
+        }
+        return  temp;
+    }
+
+    @Override
     public void muestraPixeles() {
         List<String> bitsSout = new ArrayList<>();
         for (Tda_Pixel_GodoyCarreno_25100345 pixel : pixeles){

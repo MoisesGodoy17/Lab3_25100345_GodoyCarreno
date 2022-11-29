@@ -17,7 +17,7 @@ public class Main {
         //Tda_Pixel_GodoyCarreno_25100345 P3 = new Tda_PixBit_GodoyCarreno_25100345(1, 0, 270, 1);
         //Tda_Pixel_GodoyCarreno_25100345 P4 = new Tda_PixBit_GodoyCarreno_25100345(1, 1, 360, 0);
 
-        Tda_Pixel_GodoyCarreno_25100345 P1 = new Tda_PixRgb_GodoyCarreno_25100345(0, 0, 90, 222,1,1);
+        Tda_Pixel_GodoyCarreno_25100345 P1 = new Tda_PixRgb_GodoyCarreno_25100345(0, 0, 90, 222,255,100);
         Tda_Pixel_GodoyCarreno_25100345 P2 = new Tda_PixRgb_GodoyCarreno_25100345(0, 1, 180, 1,0,0);
         Tda_Pixel_GodoyCarreno_25100345 P3 = new Tda_PixRgb_GodoyCarreno_25100345(1, 0, 270, 1,1,1);
         Tda_Pixel_GodoyCarreno_25100345 P4 = new Tda_PixRgb_GodoyCarreno_25100345(1, 1, 360, 0,0,0);
@@ -42,11 +42,12 @@ public class Main {
         //myImage.histogram();
         //System.out.println(myImage.histogram());
 
-        myImage.changePixel(P5);
-        System.out.println(myImage);
+        //myImage.changePixel(P5);
+        //System.out.println(myImage);
 
-        myImage.invertColorRgb();
-        System.out.println(myImage);
+        //myImage.invertColorRgb();
+        //System.out.println(myImage);
+        System.out.println(myImage.imagenString());
 
 
         //System.out.println(myImage.histogram());
