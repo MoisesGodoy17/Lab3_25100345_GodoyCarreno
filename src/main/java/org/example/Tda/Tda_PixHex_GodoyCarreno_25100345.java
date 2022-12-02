@@ -35,7 +35,7 @@ public class Tda_PixHex_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
 
     @Override
     int tipoPixel() {
-        if (getHex().length() >= 7){
+        if (getHex().length() <= 7){
             return 1;
         }
         return 0;

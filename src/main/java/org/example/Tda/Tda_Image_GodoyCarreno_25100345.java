@@ -43,10 +43,11 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
     public int isBitmap() {
         for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
             if (bit.tipoPixel() == 0){
-                System.out.println("Tipo de imagen no coincide");
+                System.out.println("//---Tipo de imagen no coincide hola---//\n");
                 return 0;
             }
         }
+        System.out.println(("//---La imagen es un bitmap---///"));
         return 1;
     }
 
@@ -54,7 +55,7 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
     public int isPixmap() {
         for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
             if (bit.tipoPixel() == 0){
-                System.out.println("Tipo de imagen no coincide");
+                System.out.println("//---Tipo de imagen no coincide---//\n");
                 return 0;
             }
         }
@@ -65,7 +66,7 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
     public int isHexmap() {
         for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
             if (bit.tipoPixel() == 0){
-                System.out.println("//---Tipo de imagen no coincide---//");
+                System.out.println("//---Tipo de imagen no coincide---//\n");
                 return 0;
             }
         }
@@ -79,10 +80,10 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
             acc = ++acc;
         }
         if (getLargo()*getAncho() < acc){
-            System.out.println("//---La imagen esta comprimida---//");
+            System.out.println("//---La imagen esta comprimida---//\n");
             return 1;
         }
-        System.out.println("//---La imagen no ha sido comprimida---//");
+        System.out.println("//---La imagen no ha sido comprimida---//\n");
         return 0;
     }
 

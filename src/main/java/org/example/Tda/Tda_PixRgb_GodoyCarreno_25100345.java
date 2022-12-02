@@ -60,7 +60,7 @@ public class Tda_PixRgb_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
 
     @Override
     int tipoPixel() {
-        if ((getR() >= 0 || 255 >= getR()) && (getG() >= 0 || 255 >= getG()) && (getB() >= 0 || 255 >= getB())) {
+        if ((getR() >= 0 || 255 >= getR()) || (getG() >= 0 || 255 >= getG()) || (getB() >= 0 || 255 >= getB())) {
             return 1;
         }
         return 0;

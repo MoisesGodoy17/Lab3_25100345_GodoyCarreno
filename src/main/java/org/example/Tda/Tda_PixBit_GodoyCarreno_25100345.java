@@ -39,7 +39,10 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
 
     @Override
     int tipoPixel() {
-        if (getBit() == 1 || getBit() == 0) {
+        if (getBit() == 1){
+            return 1;
+        }
+        if (getBit() == 0){
             return 1;
         }
         return 0;
