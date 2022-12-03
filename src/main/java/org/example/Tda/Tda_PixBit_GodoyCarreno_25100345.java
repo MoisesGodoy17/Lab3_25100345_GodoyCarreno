@@ -23,6 +23,11 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
     }
 
 
+    /***
+     * Descripcion: Metodo que obtiene los bits de un pixel, puede ser llamar desde la clase imagen.
+     * Recive un bit y lo agrega a una lista de bits.
+     *
+     */
     @Override
     void getBits() {
         listaBits.add(bit);
@@ -31,12 +36,24 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
         }
     }
 
+    /***
+     * Descripcion: Metodo que obtiene el bit de un pixel, puede ser llamar desde la clase imagen.
+     * Recive un pixel.
+     * @return Retorna el pixel en formato String.
+     *
+     */
     @Override
     public String getColors(){
         String color = " " + bit;
         return color;
     }
 
+    /***
+     * Descripcion: Verifica se un pixel es o no un Pixbit
+     * Recive un pixel.
+     * @return Retorna un int el cual determina si cumple o no con la condicion
+     *
+     */
     @Override
     int tipoPixel() {
         if (getBit() == 1){
@@ -45,7 +62,7 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
         if (getBit() == 0){
             return 1;
         }
-        return 0;
+        return 0; // no es un pixbit, retorna 0
     }
 
     @Override
@@ -53,10 +70,16 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
         return null;
     }
 
+    /***
+     * Descripcion: Invierte un bit, si es 0 pasa a ser 1.
+     * Recive un pixel.
+     * Modifica el bit del pixel que llama el metodo.
+     *
+     */
     @Override
     void invertColorBit() {
         if (bit == 0){
-            bit = 1;
+            bit = 1;// si el pixel tiene un bit 0 este pasa a ser 1
         }
         else {
             bit = 0;

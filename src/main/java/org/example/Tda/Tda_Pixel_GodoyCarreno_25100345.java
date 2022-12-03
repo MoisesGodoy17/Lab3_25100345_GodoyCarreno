@@ -45,13 +45,33 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
 
     abstract int tipoPixel();
 
+    /***
+     * Descripcion: Metodo llamado por flipH el cual permite modificar la posicion de los pixeles
+     * @param ancho Nueva posicion de la var Y
+     * Modifica la posicion de los bits para que queden rotados
+     *
+     */
     public void flipH(int ancho){
         y =  (y - (ancho- 1)) * (-1);
     }
+
+    /***
+     * Descripcion: Metodo llamado por flipV el cual permite modificar la posicion de los pixeles
+     * @param largo Nueva posicion de la var X
+     * Modifica la posicion de los bits para que queden rotados
+     *
+     */
     public void flipV(int largo){
         x =  (x - (largo- 1)) * (-1);
     }
 
+    /***
+     * Descripcion: Metodo llamado por rotate90 el cual permite modificar la posicion de los pixeles
+     * @param temp Nueva posicion de la var Y
+     * @param acum Nueva posicion de la var X
+     * Modifica la posicion de los bits
+     *
+     */
     public  void rotate90(int acum, int temp){
         x = acum;
         y = temp;
