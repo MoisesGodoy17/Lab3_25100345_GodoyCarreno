@@ -93,9 +93,9 @@ public class Tda_PixBit_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
 
     @Override
     public String toString() {
-        return "Tda_PixBit_GodoyCarreno_25100345{" +
+        return "[" +
                  " x=" + getX()+ ", y=" +getY() + ", bit=" + bit + ", depth=" +getDepth()+
-                '}';
+                "]";
     }
 
 }

@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_GodoyCarreno_25100345{
     private int largo;
     private int ancho;
-
     private List<Tda_Pixel_GodoyCarreno_25100345> pixeles;
 
     public Tda_Image_GodoyCarreno_25100345(int largo, int ancho, List<Tda_Pixel_GodoyCarreno_25100345> pixeles) {
@@ -88,11 +87,11 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
     public int isHexmap() {
         for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
             if (bit.tipoPixel() == 0){
-                System.out.println("//---La imagen consultada no es un Pixhex---//\n");
+                System.out.println("//---La imagen consultada no es un Hexmap---//\n");
                 return 0;
             }
         }
-        System.out.println(("//---La imagen corresponde a un Pixhex---///"));
+        System.out.println(("//---La imagen corresponde a un Hexmap---///"));
         return 1;
     }
 
@@ -109,11 +108,11 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
         for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
             acc++; // suma 1 al acumulador mientras se reocrre la image
         }
-        if (getLargo()*getAncho() < acc){
-            System.out.println("//---La imagen esta comprimida---//\n");
-            return 1; // si la cantidad de pixeles es inferior a los que se deben de generar con sus dimensiones, entonces fue comprimida
+        if (getLargo()*getAncho() == acc){
+            System.out.println("//---La imagen no ha sido comprimida---//\n");
+            return 1; // si la cantidad de pixeles que hay es igual a multiplicacion entre ancho*largo, entonces no ha sido comprimida
         }
-        System.out.println("//---La imagen no ha sido comprimida---//\n");
+        System.out.println("//---La imagen ha sido comprimida---//\n");
         return 0; // caso contrario
     }
 
@@ -244,17 +243,17 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
      */
     @Override
     public void changePixel(Tda_Pixel_GodoyCarreno_25100345 NewPixel) {
-        List<Tda_Pixel_GodoyCarreno_25100345> pixelessAux = new ArrayList<>(); // lista auxiliar
+        List<Tda_Pixel_GodoyCarreno_25100345> pixelesAux = new ArrayList<>(); // lista auxiliar
         for (Tda_Pixel_GodoyCarreno_25100345 bit : pixeles){
-            if (bit.getX() == NewPixel.getX() && bit.getY() == NewPixel.getX()){ // si el pixel actual posee la misma
+            if (bit.getX() == NewPixel.getX() && bit.getY() == NewPixel.getY()){
+                // si el pixel actual posee la misma
                 // posicion que el nuevo, entonces se agrega a la lista o el antiguo se salta.
-                pixelessAux.add(NewPixel);
-            }
-            else {
-                pixelessAux.add(bit);
+                pixelesAux.add(NewPixel);
+            }else{
+                pixelesAux.add(bit);
             }
         }
-        setPixeles(pixelessAux);// sustituye la anterior lista de pixeles por la nueva, la cual contiene el pixel nuevo
+        setPixeles(pixelesAux);// sustituye la anterior lista de pixeles por la nueva, la cual contiene el pixel nuevo
     }
 
     /***
@@ -327,10 +326,10 @@ public class Tda_Image_GodoyCarreno_25100345 implements Tda_Image_Implement_Godo
 
     @Override
     public String toString() {
-        return "Tda_Image_GodoyCarreno_25100345{" +
+        return "" +
                 "largo=" + largo +
                 ", ancho=" + ancho +
                 ", pixeles=" + pixeles +
-                '}';
+                "";
     }
 }

@@ -70,8 +70,8 @@ public class Tda_PixHex_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
 
     @Override
     public String toString() {
-        return "Tda_PixHex_GodoyCarreno_25100345{" +
+        return "[" +
                 " x=" + getX() + ", y=" + getY() + ", hex=" + hex + ", depth=" + getDepth() +
-                '}';
+                "]";
     }
 }

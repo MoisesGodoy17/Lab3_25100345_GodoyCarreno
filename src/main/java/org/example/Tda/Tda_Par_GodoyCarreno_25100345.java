@@ -14,9 +14,9 @@ public class Tda_Par_GodoyCarreno_25100345 {
 
     @Override
     public String toString() {
-        return "Tda_Par_GodoyCarreno_25100345{" +
-                "symbol='" + symbol + '\'' +
-                ", cantidad=" + cantidad +
-                '}';
+        return "[" +
+                "Color='" + symbol + '\'' +
+                ", Cantidad=" + cantidad +
+                ']';
     }
 }

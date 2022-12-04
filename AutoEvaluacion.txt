@@ -1,0 +1,19 @@
+TDAs Pixeles -> 1
+image -> 1
+isBitmap -> 1
+isPixmap -> 1
+isHexmap -> 1
+isCompressed -> 1
+flipH -> 1
+flipV -> 1
+crop -> 0.50
+imageRGBToHex -> 1
+imageToHistogram -> 1
+imageRotate90 -> 0.50
+compress -> 0
+imageChangePixel -> 1
+invertColorBit -> 1
+invertColorRGB -> 1
+imageToString -> 1 
+imageDepthLayers -> 0
+decompress -> 0

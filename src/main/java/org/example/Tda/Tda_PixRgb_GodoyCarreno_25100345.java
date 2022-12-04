@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tda_PixRgb_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_25100345 {
-
     int r;
     int g;
     int b;
@@ -76,7 +75,7 @@ public class Tda_PixRgb_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
      */
     @Override
     int tipoPixel() {
-        if ((getR() >= 0 || 255 >= getR()) || (getG() >= 0 || 255 >= getG()) || (getB() >= 0 || 255 >= getB())) {
+        if ((getR() >= 0 && 255 >= getR()) && (getG() >= 0 && 255 >= getG()) && (getB() >= 0 && 255 >= getB())) {
             return 1; // si las componentes del rgb se encuentran en este rango entonces retorna 1, si es un pixrgb
         }
         return 0; // no es un pixrgb
@@ -117,13 +116,13 @@ public class Tda_PixRgb_GodoyCarreno_25100345 extends Tda_Pixel_GodoyCarreno_251
 
     @Override
     public String toString() {
-        return "Tda_PixRgb_GodoyCarreno_25100345{" +
+        return "[" +
                 " x=" + getX()+
                 ", y=" + getY()+
                 ", r=" + r +
                 ", g=" + g +
                 ", b=" + b +
-                '}';
+                "]";
     }
 
 }

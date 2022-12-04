@@ -10,6 +10,16 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
+        //Tda_Pixel_GodoyCarreno_25100345 P1 = new Tda_PixRgb_GodoyCarreno_25100345(0, 0, 90, 222,1,1);
+        //Tda_Pixel_GodoyCarreno_25100345 P2 = new Tda_PixRgb_GodoyCarreno_25100345(0, 1, 180, 1,0,0);
+        //Tda_Pixel_GodoyCarreno_25100345 P3 = new Tda_PixRgb_GodoyCarreno_25100345(1, 0, 270, 1,1,1);
+        //Tda_Pixel_GodoyCarreno_25100345 P4 = new Tda_PixRgb_GodoyCarreno_25100345(1, 1, 360, 0,0,0);
+
+        //Tda_PixRgb_GodoyCarreno_25100345 P5 = new Tda_PixRgb_GodoyCarreno_25100345(0,0,0, 256, 111, 200);
+        //List<Tda_Pixel_GodoyCarreno_25100345> pixeles = Arrays.asList(P1, P2, P3, P4);
+        //Tda_Image_GodoyCarreno_25100345 Image = new Tda_Image_GodoyCarreno_25100345(2,2,pixeles);
+
         Scanner input = new Scanner(System.in);
         final int MENU_EXIT_OPTION = 5;
         int choiceImage = 0;
@@ -20,15 +30,15 @@ public class Main {
             choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("---// Ingrese el ancho de la imagen: //---\n");
-                    var largueBit = input.nextInt();
                     System.out.println("---// Ingrese el largo de la imagen: //---\n");
+                    var largueBit = input.nextInt();
+                    System.out.println("---// Ingrese el ancho de la imagen: //---\n");
                     var anchBit = input.nextInt();
                     List<Tda_Pixel_GodoyCarreno_25100345> ListBit = new ArrayList<>();
                     for (int i = 0; i < largueBit * anchBit; i++) {
-                        System.out.println("---// Ingrese la posición X: //---\n");
+                        System.out.println("---// Ingrese la posicion X: //---\n");
                         var xBit = input.nextInt();
-                        System.out.println("---// Ingrese la posición Y: //---\n");
+                        System.out.println("---// Ingrese la posicion Y: //---\n");
                         var yBit = input.nextInt();
                         System.out.println("---// Ingrese el bit: //---\n");
                         var bit = input.nextInt();
@@ -39,7 +49,7 @@ public class Main {
                     }
                     Tda_Image_GodoyCarreno_25100345 bitmap = new Tda_Image_GodoyCarreno_25100345(largueBit, anchBit, ListBit);
                     System.out.println(bitmap);
-                    System.out.println("---// La imagen Bitmap fue creada con éxito. //---");
+                    System.out.println("---// La imagen Bitmap fue creada con exito. //---");
                     do {
                         printMenuImage();
                         choiceImage = input.nextInt();
@@ -62,13 +72,13 @@ public class Main {
                                             System.out.println(bitmap);
                                             break;
                                         case 4:
-                                            System.out.println("--- // Ingrese una posición x1: //---");
+                                            System.out.println("--- // Ingrese una posicion x1: //---");
                                             var x1 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición y1: //---");
+                                            System.out.println("--- // Ingrese una posicion y1: //---");
                                             var y1 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición x2: //---");
+                                            System.out.println("--- // Ingrese una posicion x2: //---");
                                             var x2 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición y2: //---");
+                                            System.out.println("--- // Ingrese una posicion y2: //---");
                                             var y2 = input.nextInt();
                                             bitmap.crop(x1, y1, x2, y2);
                                             System.out.println(bitmap);
@@ -81,9 +91,9 @@ public class Main {
                                             System.out.println(bitmap);
                                             break;
                                         case 7:
-                                            System.out.println("--- // Ingrese la posición X: //---");
+                                            System.out.println("--- // Ingrese la posicion X: //---");
                                             var xNbit = input.nextInt();
-                                            System.out.println("--- // Ingrese la posición /: //---");
+                                            System.out.println("--- // Ingrese la posicion Y: //---");
                                             var yNbit = input.nextInt();
                                             System.out.println("--- // Ingrese el bit: //---");
                                             var nBit = input.nextInt();
@@ -100,7 +110,7 @@ public class Main {
                                         case 0:
                                             break;
                                         default:
-                                            System.out.println(choiceModifica + " Esta no es una opción valida.");
+                                            System.out.println(choiceModifica + " Esta no es una opcion valida.");
                                     }
                                 }while (choiceModifica != 0);
                                 break;
@@ -110,7 +120,7 @@ public class Main {
                             case 0:
                                 break;
                             default:
-                                System.out.println(choiceImage + " Esta no es una opción valida.");
+                                System.out.println(choiceImage + " Esta no es una opcion valida.");
                         }
                     }while (choiceImage != 0);
                     break;
@@ -121,9 +131,9 @@ public class Main {
                     var anchRgb = input.nextInt();
                     List<Tda_Pixel_GodoyCarreno_25100345> ListRgb = new ArrayList<>();
                     for (int i = 0; i < largueRgb * anchRgb; i++) {
-                        System.out.println("---// Ingrese la posición X: //---\n");
+                        System.out.println("---// Ingrese la posicion X: //---\n");
                         var xRgb = input.nextInt();
-                        System.out.println("---// Ingrese la posición Y: //---\n");
+                        System.out.println("---// Ingrese la posicion Y: //---\n");
                         var yRgb = input.nextInt();
                         System.out.println("---// Ingrese un componente R: //---\n");
                         var r = input.nextInt();
@@ -137,7 +147,8 @@ public class Main {
                         ListRgb.add(Pixel);
                     }
                     Tda_Image_GodoyCarreno_25100345 pixmap = new Tda_Image_GodoyCarreno_25100345(largueRgb, anchRgb, ListRgb);
-                    System.out.println("---// La imagen Pixmap fue creada con éxito. //---");
+                    System.out.println(pixmap);
+                    System.out.println("---// La imagen Pixmap fue creada con exito. //---");
                     do {
                         printMenuImage();
                         choiceImage = input.nextInt();
@@ -160,20 +171,20 @@ public class Main {
                                             System.out.println(pixmap);
                                             break;
                                         case 4:
-                                            System.out.println("--- // Ingrese una posición x1: //---");
+                                            System.out.println("--- // Ingrese una posicion x1: //---");
                                             var x1 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición y1: //---");
+                                            System.out.println("--- // Ingrese una posicion y1: //---");
                                             var y1 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición x2: //---");
+                                            System.out.println("--- // Ingrese una posicion x2: //---");
                                             var x2 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición y2: //---");
+                                            System.out.println("--- // Ingrese una posicion y2: //---");
                                             var y2 = input.nextInt();
                                             pixmap.crop(x1, y1, x2, y2);
                                             System.out.println(pixmap);
                                             break;
                                         case 5:
                                             pixmap.imageToHex();
-                                            System.out.println(" ---// Imagen transformada con éxito. //---");
+                                            System.out.println(" ---// Imagen transformada con exito. //---");
                                             System.out.println(pixmap);
                                             break;
                                         case 6:
@@ -184,9 +195,9 @@ public class Main {
                                             System.out.println(pixmap);
                                             break;
                                         case 8:
-                                            System.out.println("--- // Ingrese la posición X: //---");
+                                            System.out.println("--- // Ingrese la posicion X: //---");
                                             var xNbit = input.nextInt();
-                                            System.out.println("--- // Ingrese la posición /: //---");
+                                            System.out.println("--- // Ingrese la posicion /: //---");
                                             var yNbit = input.nextInt();
                                             System.out.println("--- // Ingrese el bit: //---");
                                             var nBit = input.nextInt();
@@ -203,7 +214,7 @@ public class Main {
                                         case 0:
                                             break;
                                         default:
-                                            System.out.println(choiceModifica + "Esta no es una opción valida.");
+                                            System.out.println(choiceModifica + "Esta no es una opcion valida.");
                                     }
                                 }while (choiceModifica != 0);
                                 break;
@@ -211,7 +222,7 @@ public class Main {
                                 System.out.println(pixmap.imagenString());
                                 break;
                             case 0:
-                                System.out.println("Hasta la próxima.\n");
+                                System.out.println("Hasta la proxima.\n");
                                 break;
                             default:
                                 System.out.println(choiceImage + "Esta no es una opción valida.");
@@ -225,9 +236,9 @@ public class Main {
                     var anchHex = input.nextInt();
                     List<Tda_Pixel_GodoyCarreno_25100345> ListHex = new ArrayList<>();
                     for (int i = 0; i < largueHex * anchHex; i++) {
-                        System.out.println("---// Ingrese la posición X: //---\n");
+                        System.out.println("---// Ingrese la posicion X: //---\n");
                         var xHex = input.nextInt();
-                        System.out.println("---// Ingrese la posición Y: //---\n");
+                        System.out.println("---// Ingrese la posicion Y: //---\n");
                         var yHex = input.nextInt();
                         System.out.println("---// Ingrese el color en formato Hexadecimal://---\n");
                         System.out.println("---// Ejemplo: #00AA00//---\n");
@@ -239,7 +250,7 @@ public class Main {
                     }
                     Tda_Image_GodoyCarreno_25100345 hexmap = new Tda_Image_GodoyCarreno_25100345(largueHex, anchHex, ListHex);
                     System.out.println(hexmap);
-                    System.out.println("---// La imagen Hexmap fue creada con éxito. //---");
+                    System.out.println("---// La imagen Hexmap fue creada con exito. //---");
                     do {
                         printMenuImage();
                         choiceImage = input.nextInt();
@@ -262,13 +273,13 @@ public class Main {
                                             System.out.println(hexmap);
                                             break;
                                         case 4:
-                                            System.out.println("--- // Ingrese una posición x1: //---");
+                                            System.out.println("--- // Ingrese una posicion x1: //---");
                                             var x1 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición y1: //---");
+                                            System.out.println("--- // Ingrese una posicion y1: //---");
                                             var y1 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición x2: //---");
+                                            System.out.println("--- // Ingrese una posicion x2: //---");
                                             var x2 = input.nextInt();
-                                            System.out.println("--- // Ingrese una posición y2: //---");
+                                            System.out.println("--- // Ingrese una posicion y2: //---");
                                             var y2 = input.nextInt();
                                             hexmap.crop(x1, y1, x2, y2);
                                             System.out.println(hexmap);
@@ -281,9 +292,9 @@ public class Main {
                                             System.out.println(hexmap);
                                             break;
                                         case 7:
-                                            System.out.println("--- // Ingrese la posición X: //---");
+                                            System.out.println("--- // Ingrese la posicion X: //---");
                                             var xNbit = input.nextInt();
-                                            System.out.println("--- // Ingrese la posición /: //---");
+                                            System.out.println("--- // Ingrese la posicion /: //---");
                                             var yNbit = input.nextInt();
                                             System.out.println("--- // Ingrese el bit: //---");
                                             var nBit = input.nextInt();
@@ -296,7 +307,7 @@ public class Main {
                                         case 0:
                                             break;
                                         default:
-                                            System.out.println(choiceModifica + " Esta no es una opción valida.");
+                                            System.out.println(choiceModifica + " Esta no es una opcion valida.");
                                     }
                                 }while (choiceModifica != 0);
                                 break;
@@ -306,16 +317,16 @@ public class Main {
                             case 0:
                                 break;
                             default:
-                                System.out.println(choiceImage + " Esta no es una opción valida.");
+                                System.out.println(choiceImage + " Esta no es una opcion valida.");
                         }
                     }while (choiceImage != 0);
                     break;
                 case 0:
-                    System.out.println("Hasta la próxima");
+                    System.out.println("Hasta la proxima");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println(choice + " Esta no es una opción valida.");
+                    System.out.println(choice + " Esta no es una opcion valida.");
 
             }
         } while (choice != MENU_EXIT_OPTION);
@@ -323,12 +334,12 @@ public class Main {
 
     private static void printMenu() {
         //System.out.println("Main Menu.\n");
-        System.out.println("Main de creación.\n");
+        System.out.println("Menu de creacion.\n");
         System.out.print("1. Crear un Bitmap. \n");
         System.out.print("2. Crear un Pixmap.\n");
         System.out.print("3. Crear un Hexmap.\n");
         System.out.print("0. Salir.\n");
-        System.out.print("\nIngrese su opción: ");
+        System.out.print("\nIngrese su opcion: ");
     }
 
     private static void printMenuImage(){
@@ -336,7 +347,7 @@ public class Main {
         System.out.print("1. Modificar imagen.\n");
         System.out.print("2. Mostar imagen en formato String.\n");
         System.out.print("0. Volver.\n");
-        System.out.print("\nIngrese su opción:\n");
+        System.out.print("\nIngrese su opcion:\n");
     }
 
     private static void printMenuOperationBit(){
@@ -350,7 +361,7 @@ public class Main {
         System.out.print("7. Cambia un pixel Pixbit por otro.\n");
         System.out.print("8. Invierte los bits.\n");
         System.out.print("0. Volver.");
-        System.out.print("\nIngrese la operación a realizar: \n");
+        System.out.print("\nIngrese la operacion a realizar: \n");
     }
 
     private static void printMenuOperationRgb(){

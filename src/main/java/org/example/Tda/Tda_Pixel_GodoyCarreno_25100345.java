@@ -52,7 +52,7 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
      *
      */
     public void flipH(int ancho){
-        y =  (y - (ancho- 1)) * (-1);
+        y =  (y - (ancho- 1)) * (-1); // a la componente Y se le resta el ancho
     }
 
     /***
@@ -62,14 +62,14 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
      *
      */
     public void flipV(int largo){
-        x =  (x - (largo- 1)) * (-1);
+        x =  (x - (largo- 1)) * (-1);//a la componente X se le resta el largo.
     }
 
     /***
      * Descripcion: Metodo llamado por rotate90 el cual permite modificar la posicion de los pixeles
      * @param temp Nueva posicion de la var Y
      * @param acum Nueva posicion de la var X
-     * Modifica la posicion de los bits
+     * Modifica la posicion de los bits, de tal forma que la nueva posicion corresponde a la que tendria si se rotara fisicamente una imagen.
      *
      */
     public  void rotate90(int acum, int temp){
@@ -85,11 +85,11 @@ public abstract class Tda_Pixel_GodoyCarreno_25100345 {
 
     @Override
     public String toString() {
-        return "Tda_Pixel_GodoyCarreno_25100345{" +
+        return "[" +
                 "x=" + x +
                 ", y=" + y +
                 ", depth=" + depth +
-                '}';
+                "]";
     }
 
     //List<Tda_Pixel_GodoyCarreno_25100345> pixeles
